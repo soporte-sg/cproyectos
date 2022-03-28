@@ -1,4 +1,4 @@
-El<?php
+<?php
 App::uses('AppController', 'Controller');
 /**
  * Estados Controller

@@ -34,9 +34,9 @@
 		<td><?php echo h($tarea['Tarea']['created']); ?>&nbsp;</td>
 		<td><?php echo h($tarea['Tarea']['modified']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $tarea['Tarea']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $tarea['Tarea']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $tarea['Tarea']['id']), array(), __('Are you sure you want to delete # %s?', $tarea['Tarea']['id'])); ?>
+			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $tarea['Tarea']['id'])); ?>
+			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $tarea['Tarea']['id'])); ?>
+			<?php echo $this->Form->postLink(__('Eliminar'), array('action' => 'delete', $tarea['Tarea']['id']), array(), __('Are you sure you want to delete # %s?', $tarea['Tarea']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -45,7 +45,7 @@
 	<p>
 	<?php
 	echo $this->Paginator->counter(array(
-	'format' => __('Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}')
+	'format' => __('Pagina {:page} de {:pages}, mostrando {:current} registros de {:count} en total, empezando en el registro {:start}, terminando en {:end}')
 	));
 	?>	</p>
 	<div class="paging">
@@ -59,14 +59,14 @@
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('New Tarea'), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Objetivos'), array('controller' => 'objetivos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Objetivo'), array('controller' => 'objetivos', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Usuarios'), array('controller' => 'usuarios', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Usuario'), array('controller' => 'usuarios', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Estados'), array('controller' => 'estados', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Estado'), array('controller' => 'estados', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Logros'), array('controller' => 'logros', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Logro'), array('controller' => 'logros', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nueva Tarea'), array('action' => 'add')); ?></li>
+		<li><?php echo $this->Html->link(__('Lista de Objetivos'), array('controller' => 'objetivos', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nuevo Objetivo'), array('controller' => 'objetivos', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Lista de Usuarios'), array('controller' => 'usuarios', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nuevo Usuario'), array('controller' => 'usuarios', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Lista de Estados'), array('controller' => 'estados', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nuevo Estado'), array('controller' => 'estados', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Lista de Logros'), array('controller' => 'logros', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nuevo Logro'), array('controller' => 'logros', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

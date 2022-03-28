@@ -45,7 +45,7 @@
     <p>
     <?php
     echo $this->Paginator->counter(array(
-    'format' => __('Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}')
+    'format' => __('Pagina {:page} de {:pages}, mostrando {:current} registros de {:count} total, empezando en el registro {:start}, terminando en {:end}')
     ));
     ?>  </p>
     <div class="paging">
@@ -59,9 +59,9 @@
 <div class="actions">
        <h3><?php echo __('Acciones'); ?></h3>
     <ul>
-        <li><?php echo $this->Html->link(__('Listar Proyectos'), array('controller' => 'clientes','action' => 'index')); ?></li>
+        <li><?php echo $this->Html->link(__('Listado de Proyectos'), array('controller' => 'clientes','action' => 'index')); ?></li>
         <li><?php echo $this->Html->link(__('Nuevo Usuario'), array('action' => 'add')); ?></li>
-        <li><?php echo $this->Html->link(__('Listar Roles'), array('controller' => 'roles', 'action' => 'index')); ?> </li>
+        <li><?php echo $this->Html->link(__('Listado de Roles'), array('controller' => 'roles', 'action' => 'index')); ?> </li>
         <li><?php echo $this->Html->link(__('Nuevo Rol'), array('controller' => 'roles', 'action' => 'add')); ?> </li>
     </ul>
 </div>

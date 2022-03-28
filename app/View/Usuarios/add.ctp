@@ -20,10 +20,10 @@
     <h3><?php echo __('Actions'); ?></h3>
     <ul>
 
-        <li><?php echo $this->Html->link(__('List Usuarios'), array('action' => 'index')); ?></li>
-        <li><?php echo $this->Html->link(__('List Tipousuarios'), array('controller' => 'tipousuarios', 'action' => 'index')); ?> </li>
-        <li><?php echo $this->Html->link(__('New Tipousuario'), array('controller' => 'tipousuarios', 'action' => 'add')); ?> </li>
-        <li><?php echo $this->Html->link(__('List Tareas'), array('controller' => 'tareas', 'action' => 'index')); ?> </li>
-        <li><?php echo $this->Html->link(__('New Tarea'), array('controller' => 'tareas', 'action' => 'add')); ?> </li>
+        <li><?php echo $this->Html->link(__('Lista de Usuarios'), array('action' => 'index')); ?></li>
+        <li><?php echo $this->Html->link(__('Lista de Tipo de usuarios'), array('controller' => 'tipousuarios', 'action' => 'index')); ?> </li>
+        <li><?php echo $this->Html->link(__('Nuevo Tipousuario'), array('controller' => 'tipousuarios', 'action' => 'add')); ?> </li>
+        <li><?php echo $this->Html->link(__('Lista de Tareas'), array('controller' => 'tareas', 'action' => 'index')); ?> </li>
+        <li><?php echo $this->Html->link(__('Nueva Tarea'), array('controller' => 'tareas', 'action' => 'add')); ?> </li>
     </ul>
 </div>

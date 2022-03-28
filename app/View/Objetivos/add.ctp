@@ -15,10 +15,10 @@
 	<h3><?php echo __('Accion'); ?></h3>
 	<ul>
 
-		<li><?php echo $this->Html->link(__('List Objetivos'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List Proyectos'), array('controller' => 'proyectos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Proyecto'), array('controller' => 'proyectos', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Tareas'), array('controller' => 'tareas', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Tarea'), array('controller' => 'tareas', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Lista de Objetivos'), array('action' => 'index')); ?></li>
+		<li><?php echo $this->Html->link(__('Lista de Proyectos'), array('controller' => 'proyectos', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nuevo Proyecto'), array('controller' => 'proyectos', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Lista de Tareas'), array('controller' => 'tareas', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nueva Tarea'), array('controller' => 'tareas', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

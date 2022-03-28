@@ -25,7 +25,7 @@ class ClientesController extends AppController {
 	public function index() {
 		$user = $this->Session->read('Usuario');
 		//debug($user);
-		echo  $rol=$user['Usuario']['role_id'];
+		$rol=$user['Usuario']['role_id'];
         $this->Cliente->recursive = 0;
 		$this->set('clientes', $this->Paginator->paginate());
 		$this->set(compact('rol'));

@@ -151,7 +151,7 @@ public function informe($id_proyecto){
 		if (!$this->Proyecto->exists()) {
 			throw new NotFoundException(__('Invalid proyecto'));
 		}
-		$this->request->allowMethod('post', 'delete');
+		// $this->request->allowMethod('post', 'delete');
 		if ($this->Proyecto->delete()) {
 			$this->Session->setFlash(__('The proyecto fue eliminado.'));
 		} else {

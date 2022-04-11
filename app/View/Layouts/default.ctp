@@ -27,7 +27,7 @@
     <!-- Bootstrap Core Css -->
     <link href=<?php echo $path . "bootstrap/css/bootstrap.css"; ?> rel="stylesheet">
     <!-- datepicker -->
-    
+
     <!-- Waves Effect Css -->
     <link href=<?php echo $path . "node-waves/waves.css"; ?> rel="stylesheet">
     <!-- Animation Css -->
@@ -56,6 +56,7 @@
 <?php
 $user = $this->Session->read('Usuario');
 $nombres = $user['Usuario']['nombres'] . ' ' . $user['Usuario']['apellidos'];
+$rol = $user['Usuario']['role_id'];
 
 ?>
 
@@ -65,9 +66,9 @@ $nombres = $user['Usuario']['nombres'] . ' ' . $user['Usuario']['apellidos'];
         <div class="navbar-header">
             <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
             <a href="javascript:void(0);" class="bars"></a>
-            <a href="<?php echo APP_WWW . 'home' ?>"><?php echo $this->Html->image('logocalidad4.png', array( 'width' => '60px', 'height' => 'auto')) ?></a>
+            <a href="<?php echo APP_WWW . 'home' ?>"><?php echo $this->Html->image('logocalidad4.png', array('width' => '60px', 'height' => 'auto')) ?></a>
 
-            
+
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
@@ -76,17 +77,20 @@ $nombres = $user['Usuario']['nombres'] . ' ' . $user['Usuario']['apellidos'];
                 <li class="dropdown lista-menu">
 
                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
-                    <span >CLIENTES <i class="material-icons icono">keyboard_arrow_down</i> </span>  
-                    
+                        <span>CLIENTES <i class="material-icons icono">keyboard_arrow_down</i> </span>
+
                     </a>
                     <ul class="dropdown-menu">
                         <li class="header">Clientes</li>
-                        <li><a class="dropdown-item" href="<?php echo APP_WWW . 'clientes' ?>">Listar clientes ACTIVOS</a></li>
-                        <li><a class="dropdown-item" href="<?php echo APP_WWW . 'clientes/index2' ?>">Listar todos los clientes</a></li>
-                        <li><a class="dropdown-item" href="<?php echo APP_WWW . 'clientes/add' ?>">Crear un nuevo cliente</a></li>
+                        <li><a class="dropdown-item" href="<?php echo APP_WWW . 'clientes' ?>">Listar clientes activos</a></li>
+                        <?php if ($rol == 1) : ?>
+                            <li><a class="dropdown-item" href="<?php echo APP_WWW . 'clientes/index2' ?>">Listar todos los clientes</a></li>
+
+                            <li><a class="dropdown-item" href="<?php echo APP_WWW . 'clientes/add' ?>">Crear un nuevo cliente</a></li>
+                        <?php endif; ?>
                     </ul>
                 </li>
-                
+
                 <li class="dropdown lista-menu">
 
                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
@@ -98,16 +102,29 @@ $nombres = $user['Usuario']['nombres'] . ' ' . $user['Usuario']['apellidos'];
                         <li><a class="dropdown-item" href="<?php echo APP_WWW . 'clientes/add' ?>">Crear un nuevo cliente</a></li>
                     </ul>
                 </li>
+                <?php if ($rol == 1) : ?>
+                    <li class="dropdown lista-menu">
 
-                
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                            <span>USUARIOS</span><i class="material-icons">keyboard_arrow_down</i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="header">USUARIOS</li>
+                            <li><a class="dropdown-item" href="<?php echo APP_WWW . 'usuarios' ?>">Listar Usuarios</a></li>
+                            <li><a class="dropdown-item" href="<?php echo APP_WWW . 'usuarios/add' ?>">Crear un nuevo usuario</a></li>
+                        </ul>
+                    </li>
+                <?php endif; ?>
+
+
                 <li class="dropdown lista-menu">
 
                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
-                    <div class="demo-google-material-icon"> <i class="material-icons icono">account_circle</i> <?php echo ucwords($nombres) ?> </div> 
+                        <div class="demo-google-material-icon"> <i class="material-icons icono">account_circle</i> <?php echo ucwords($nombres) ?> </div>
 
                     </a>
                     <ul class="dropdown-menu">
-                        
+
                         <li class="header"></li>
                         <li><?php echo $this->Html->link(__('Cerrar Sesion'), array('controller' => 'usuarios', 'action' => 'salir')); ?></li>
                     </ul>
@@ -116,7 +133,7 @@ $nombres = $user['Usuario']['nombres'] . ' ' . $user['Usuario']['apellidos'];
 
                 <!-- #END# Notifications -->
                 <!-- Tasks -->
-                
+
             </ul>
         </div>
     </div>
@@ -124,7 +141,7 @@ $nombres = $user['Usuario']['nombres'] . ' ' . $user['Usuario']['apellidos'];
 
 
 
-<body class="theme-grey">
+<body class="theme-blue-grey">
 
     <section>
         <div class='dashboard-content'>
@@ -142,7 +159,11 @@ $nombres = $user['Usuario']['nombres'] . ' ' . $user['Usuario']['apellidos'];
 
 
     <script>
+        
+
+
         $(document).ready(function() {
+            $('[data-toggle="tooltip"]').tooltip();
             $('#tablas').DataTable({
                 "language": {
                     "info": "Mostando pagina _START_ de _END_ paginas con un total de _TOTAL_ registros"

@@ -1,5 +1,3 @@
-
-
 <nav aria-label="breadcrumb">
 
 	<ol class="breadcrumb ">
@@ -17,34 +15,48 @@
 	<div class="row d-flex card ">
 		<div class="row header">
 			<div class="row d-flex justify-content-between">
-				<div class="col-lg-10">
+				<div class="col-lg-8">
 					<h4 class="text-center"><?php echo h($objetivo['Objetivo']['descripcion']); ?></h4>
 				</div>
-				<div class="col-lg-2 ">
-					<button type="button" class="btn btn-dark m-l--30 ">
-						<div class="demo-google-material-icon"> <i class="material-icons">add_circle</i> <span class="icon-name">
+				<div class="col-lg-4 ">
+					<?php if ($rol == 1) : ?>
+						<button type="button" class="btn btn-dark m-l--30 ">
+							<div class="demo-google-material-icon"> <i class="material-icons">add_circle</i> <span class="icon-name">
 
-								<?php
-								if ($rol == 1) {
+									<?php
+
 									echo $this->Html->link(__('Agregar nueva Tarea'), array('controller' => 'tareas', 'action' => 'add/' . $objetivo['Objetivo']['id']));
-								}
-								?>
 
-							</span>
-						</div>
-					</button>
+									?>
+
+								</span>
+							</div>
+						</button>
+						<button type="button" class="btn btn-dark  ">
+							<div class="demo-google-material-icon"> <i class="material-icons">add_circle</i> <span class="icon-name">
+
+									<?php
+
+									echo $this->Html->link(__('Agregar nuevo Compromiso'), array('controller' => 'tareas', 'action' => 'add/' . $objetivo['Objetivo']['id']));
+
+									?>
+
+								</span>
+							</div>
+						</button>
+					<?php endif; ?>
 				</div>
 			</div>
 
 			<div class="row d-flex justify-content-between">
 				<div class="col-lg-6">
-					
+
 					<dt><?php echo __('Proyecto'); ?></dt>
 					<dd>
 						<?php echo $this->Html->link($objetivo['Proyecto']['nombre'], array('controller' => 'proyectos', 'action' => 'view', $objetivo['Proyecto']['id'])); ?>
 						&nbsp;
 					</dd>
-					
+
 					<dt><?php echo __('Inicio'); ?></dt>
 					<dd>
 						<?php echo h($objetivo['Objetivo']['inicio']); ?>
@@ -63,7 +75,7 @@
 			<div class="panel-body">
 				<div class="table-responsive">
 					<h3><?php //echo __('Proyectos') . ' de ' . $cliente['Cliente']['nombre']; 
-						?>Tareas:</h3>
+						?>ACTIVIDADES:</h3>
 					<?php if (!empty($objetivo['Tarea'])) : ?>
 						<table class="table table-hover table-bordered" id="tablas">
 							<thead class="">
@@ -73,8 +85,8 @@
 									<th class="text-center">DESCRIPCION</th>
 									<th class="text-center">ESTADO</th>
 									<th class="text-center">SOPORTE</th>
-									<th class="text-center">INICIO</th>
-									<th class="text-center">FIN</th>
+									<!-- <th class="text-center">INICIO</th> -->
+									<th class="text-center">ENTREGA</th>
 									<th class="text-center">ACCIONES</th>
 								</tr>
 							</thead>
@@ -100,7 +112,7 @@
 												}
 											}
 											?></td>
-										<td><?php echo $tarea['inicio']; ?></td>
+										<!-- <td><?php //echo $tarea['inicio']; ?></td> -->
 										<td><?php echo $tarea['fin']; ?></td>
 
 
@@ -108,20 +120,23 @@
 
 										<td class="actions">
 
-											<a class=" bg-deep-white waves-effect" href="<?php echo APP_WWW . 'tareas/view/' . $tarea['id'] ?> "><i class="material-icons">settings</i></a>
+											<a class=" bg-deep-white waves-effect" data-toggle="tooltip" data-original-title="Gestionar" href="<?php echo APP_WWW . 'tareas/view/' . $tarea['id'] ?> "><i class="material-icons">settings</i></a>
 
 
 											<?php if ($rol == 1) : ?>
 
-												<a class=" bg-deep-white waves-effect" href="<?php echo APP_WWW . 'tareas/edit/' . $tarea['id'] ?> "><i class="material-icons">create</i></a>
+												<a class=" bg-deep-white waves-effect" data-toggle="tooltip" data-original-title="Editar" href="<?php echo APP_WWW . 'tareas/edit/' . $tarea['id'] ?> "><i class="material-icons">create</i></a>
 
 
 											<?php endif; ?>
 
 											<?php if ($rol == 1) : ?>
-												<a class=" bg-deep-white waves-effect" onclick="javascript:return confirm('Estas seguro de desactivar el objetivo');" href="<?php echo APP_WWW . 'tareas/delete/' . $tarea['id'] ?>"><i class="material-icons">delete</i></a>
+												<a class=" bg-deep-white waves-effect" data-toggle="tooltip" data-original-title="Eliminar" onclick="javascript:return confirm('Estas seguro de desactivar el objetivo');" href="<?php echo APP_WWW . 'tareas/delete/' . $tarea['id'] ?>"><i class="material-icons">delete</i></a>
 
 											<?php endif; ?>
+
+											<a class=" bg-deep-white waves-effect" data-toggle="tooltip" data-original-title="Compromisos" href="#"><i class="material-icons">event</i></a>
+
 										</td>
 									</tr>
 
@@ -134,8 +149,8 @@
 									<th class="text-center">DESCRIPCION</th>
 									<th class="text-center">ESTADO</th>
 									<th class="text-center">SOPORTE</th>
-									<th class="text-center">INICIO</th>
-									<th class="text-center">FIN</th>
+									<!-- <th class="text-center">INICIO</th> -->
+									<th class="text-center">ENTREGA</th>
 									<th class="text-center">ACCIONES</th>
 								</tr>
 							</tfoot>
@@ -157,4 +172,3 @@
 
 
 </div>
-

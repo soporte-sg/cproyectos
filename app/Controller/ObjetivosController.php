@@ -117,7 +117,7 @@ public function beforeFilter() {
 		if (!$this->Objetivo->exists()) {
 			throw new NotFoundException(__('Invalid objetivo'));
 		}
-		$this->request->allowMethod('post', 'delete');
+		// $this->request->allowMethod('post', 'delete');
 		if ($this->Objetivo->delete()) {
 			$this->Session->setFlash(__('El objetivo ha sido eliminado.'));
 		} else {

@@ -119,7 +119,7 @@ class ClientesController extends AppController {
 		if (!$this->Cliente->exists()) {
 			throw new NotFoundException(__('Invalid cliente'));
 		}
-		$this->request->allowMethod('post', 'delete');
+		// $this->request->allowMethod('post', 'delete');
 		if ($this->Cliente->delete()) {
 			$this->Session->setFlash(__('El cliente ha sido eliminado.'));
 		} else {

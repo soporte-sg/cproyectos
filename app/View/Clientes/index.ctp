@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
-	
+
 
 
 </head>
@@ -27,29 +27,31 @@
 		<div class="body  ">
 			<div class="panel ">
 				<div class="panel-header">
-					<button type="button" class="btn">
-						<i class="material-icons">add_circle</i> <span class="icon-name">
+					<?php if ($rol == 1) : ?>
+						<button type="button" class="btn">
+							<i class="material-icons">add_circle</i> <span class="icon-name">
 
 
-							<?php
-
-							if ($rol == 1) {
+								<?php
 								echo $this->Html->link(__('Agregar nuevo cliente'), array('action' => 'add'));
-							}
-							?>
-						</span>
-					</button>
-					<button type="button" class="btn">
-						<i class="material-icons">visibility</i> <span class="icon-name">
-							<?php
 
-							if ($rol == 1) {
+								?>
+							</span>
+						</button>
+						<button type="button" class="btn">
+							<i class="material-icons">visibility</i> <span class="icon-name">
+								<?php
+
+
 								echo $this->Html->link(__('Ver todos los clientes'), array('action' => 'index2'));
-							}
-							?>
-						</span>
 
-					</button>
+								?>
+							</span>
+
+						</button>
+					<?php endif; ?>
+
+
 				</div>
 				<div class="panel-body">
 
@@ -95,7 +97,7 @@
 										</ul>
 
 										<button class="btn btn-block"><a class=" bg-deep-white waves-effect" href="<?php echo APP_WWW . 'clientes/view/' . $cliente['Cliente']['id'] ?> "><i class="material-icons">contacts</i>Proyectos</a>
-											
+
 										</button>
 
 									</div>

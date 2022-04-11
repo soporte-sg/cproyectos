@@ -75,21 +75,24 @@
 
 										<td class="actions">
 
+											
 
-											<a class=" bg-deep-white waves-effect" href="<?php echo APP_WWW . 'clientes/view/' . $cliente['Cliente']['id'] ?> "><i class="material-icons">settings</i></a>
+
+
+											<a class=" bg-deep-white waves-effect" data-toggle="tooltip" data-original-title="Gestionar" href="<?php echo APP_WWW . 'clientes/view/' . $cliente['Cliente']['id'] ?> "><i class="material-icons">settings</i></a>
 											
 
 
 
 											<?php if ($rol == 1) :?>
-												<a class=" bg-deep-white waves-effect" href="<?php echo APP_WWW . 'clientes/edit/' . $cliente['Cliente']['id'] ?> "><i class="material-icons">create</i></a>
+												<a class=" bg-deep-white waves-effect" data-toggle="tooltip" data-original-title="Editar" href="<?php echo APP_WWW . 'clientes/edit/' . $cliente['Cliente']['id'] ?> "><i class="material-icons">create</i></a>
 											<?php endif;?>
 											<?php if ($rol == 1) {
 												echo $this->Html->link(__('Informe'), array('action' => 'informe', $cliente['Cliente']['id']));
 												// echo '<button type="button" class="btn bg-deep-white waves-effect">' . '<i class="material-icons">assignment</i>' . . '</button>';
 											} ?>
 											<?php if ($rol == 1) :?>
-												<a class=" bg-deep-white waves-effect" onclick="javascript:return confirm('Estas seguro de desactivar el # %s?');"   href="<?php echo APP_WWW . 'clientes/delete/'. $cliente['Cliente']['id'] ?>"><i class="material-icons">delete</i></a>
+												<a class=" bg-deep-white waves-effect" data-toggle="tooltip" data-original-title="Eliminar" onclick="javascript:return confirm('Estas seguro de desactivar el # %s?');"   href="<?php echo APP_WWW . 'clientes/delete/'. $cliente['Cliente']['id'] ?>"><i class="material-icons">delete</i></a>
 										
 											<?php endif; ?>
 											

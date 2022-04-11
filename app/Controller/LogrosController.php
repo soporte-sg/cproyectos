@@ -100,7 +100,7 @@ class LogrosController extends AppController {
 		if (!$this->Logro->exists()) {
 			throw new NotFoundException(__('Invalid logro'));
 		}
-		$this->request->allowMethod('post', 'delete');
+		// $this->request->allowMethod('post', 'delete');
 		if ($this->Logro->delete()) {
 			$this->Session->setFlash(__('El logro fue eliminado.'));
 		} else {

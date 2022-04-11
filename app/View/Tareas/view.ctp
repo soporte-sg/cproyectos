@@ -19,8 +19,9 @@
 					<h4 class="text-center"><?php echo h($tarea['Tarea']['descripcion']); ?></h4>
 				</div>
 				<div class="col-lg-2 ">
-					<button type="button" class="btn btn-dark m-l--30 ">
-						<div class="demo-google-material-icon"> <i class="material-icons">add_circle</i> <span class="icon-name">
+					<?php if ($rol == 1 ): ?>
+						<button type="button" class="btn btn-dark m-l--30 ">
+							<div class="demo-google-material-icon"> <i class="material-icons">add_circle</i> <span class="icon-name">
 
 								<?php
 								if ($rol == 1) {
@@ -29,8 +30,9 @@
 								?>
 
 							</span>
-						</div>
-					</button>
+							</div>
+						</button>
+					<?php endif; ?>
 				</div>
 			</div>
 
@@ -79,18 +81,18 @@
 
 										<td class="actions">
 
-											<a class=" bg-deep-white waves-effect" href="<?php echo APP_WWW . 'logros/view/' . $logro['id'] ?> "><i class="material-icons">settings</i></a>
+											<a class=" bg-deep-white waves-effect" data-toggle="tooltip" data-original-title="Gestionar" href="<?php echo APP_WWW . 'logros/view/' . $logro['id'] ?> "><i class="material-icons">settings</i></a>
 
 
 											<?php if ($rol == 1) : ?>
 
-												<a class=" bg-deep-white waves-effect" href="<?php echo APP_WWW . 'logros/edit/' . $logro['id'] ?> "><i class="material-icons">create</i></a>
+												<a class=" bg-deep-white waves-effect" data-toggle="tooltip" data-original-title="Editar" href="<?php echo APP_WWW . 'logros/edit/' . $logro['id'] ?> "><i class="material-icons">create</i></a>
 
 
 											<?php endif; ?>
 
 											<?php if ($rol == 1) : ?>
-												<a class=" bg-deep-white waves-effect" onclick="javascript:return confirm('Estas seguro de desactivar el #  %s?');" href="<?php echo APP_WWW . 'logros/delete/' . $logro['id'] ?>"><i class="material-icons">delete</i></a>
+												<a class=" bg-deep-white waves-effect" data-toggle="tooltip" data-original-title="Eliminar" onclick="javascript:return confirm('Estas seguro de desactivar el #  %s?');" href="<?php echo APP_WWW . 'logros/delete/' . $logro['id'] ?>"><i class="material-icons">delete</i></a>
 
 											<?php endif; ?>
 										</td>

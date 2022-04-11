@@ -109,7 +109,7 @@ class TareasController extends AppController {
 		if (!$this->Tarea->exists()) {
 			throw new NotFoundException(__('Invalid tarea'));
 		}
-		$this->request->allowMethod('post', 'delete');
+		// $this->request->allowMethod('post', 'delete');
 		if ($this->Tarea->delete()) {
 			$this->Session->setFlash(__('la tarea ha sido eliminada.'));
 		} else {

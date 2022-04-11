@@ -1,26 +1,63 @@
-<div class="objetivos form">
-<?php echo $this->Form->create('Objetivo'); ?>
-	<fieldset>
-		<legend><?php echo __('Editar Objetivo'); ?></legend>
-	<?php
-		echo $this->Form->input('id');
-		echo $this->Form->input('proyecto_id');
-		echo $this->Form->input('descripcion');
-		echo $this->Form->input('inicio');
-		echo $this->Form->input('fin');
-	?>
-	</fieldset>
-<?php echo $this->Form->end(__('Guardar')); ?>
-</div>
-<div class="actions">
-	<h3><?php echo __('Acciones'); ?></h3>
-	<ul>
 
-		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('Objetivo.id')), array(), __('Are you sure you want to delete # %s?', $this->Form->value('Objetivo.id'))); ?></li>
-		<li><?php echo $this->Html->link(__('Lista de Objetivos'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('Lista de Proyectos'), array('controller' => 'proyectos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('Nuevo Proyecto'), array('controller' => 'proyectos', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('Lista de Tareas'), array('controller' => 'tareas', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('Nueva Tarea'), array('controller' => 'tareas', 'action' => 'add')); ?> </li>
-	</ul>
+<div class="row clearfix">
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		<div class="card">
+			<div class="header">
+				<h2>
+					EDITAR OBJETIVO
+				</h2>
+			</div>
+			<div class="body">
+				<div class="objetivo form">
+					<?php echo $this->Form->create('Objetivo'); ?>
+					<fieldset>
+						<div class="form-group">
+							<div class="form-line">
+								<?php echo $this->Form->input('id', array('class' => 'form-control', 'label' => 'Id')); ?>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="form-line">
+								<?php echo $this->Form->input('proyecto_id', array('class' => 'form-control', 'label' => 'Proyecto Id')); ?>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="form-line">
+								<?php echo $this->Form->input('descripcion', array('class' => 'form-control', 'label' => 'Descripcion', 'required', 'placeholder' => 'Ingresa la descripcion del objetivo')); ?>
+							</div>
+						</div>
+
+						
+
+						<div class="form-line">
+							<?php //echo $this->Form->input('inicio', array('class' => 'form-control', 'label' => 'fecha de inicio', 'required', 'type' => 'date', 'wtx-context' => '33CC7803-7D11-4C76-BB02-8B6F0083EE4F')); 
+							?>
+							<?php echo $this->Form->input('inicio'); ?>
+
+							<!-- <label for="">fecha de inicio</label>
+							<input type="date" name="data[Proyecto][inicio]" class="form-control"> -->
+
+						</div>
+						<div class="form-line">
+							
+							<?php echo $this->Form->input('fin');?>
+							
+						</div>
+						<br>
+
+					</fieldset>
+					<?php echo $this->Form->end(array('label' => 'Guardar', 'class' => 'btn btn-primary m-t-15 waves-effect')); ?>
+
+				</div>
+
+
+			</div>
+		</div>
+	</div>
 </div>
+
+
+
+

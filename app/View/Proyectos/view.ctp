@@ -3,7 +3,7 @@
 	<ol class="breadcrumb ">
 		<li><a href="<?php echo APP_WWW . 'home' ?>"><i class="material-icons">home</i> Home</a></li>
 		<li><a href="<?php echo APP_WWW . 'clientes' ?>"><i class="material-icons">account_box</i> Clientes</a></li>
-		<li><a href="<?php echo APP_WWW . 'proyectos/' . $proyecto['Proyecto']['id'] ?>"><i class="material-icons">library_books</i> Proyectos</a></li>
+		<li><a href="<?php echo APP_WWW . 'clientes/view/' . $proyecto['Cliente']['id'] ?>"><i class="material-icons">library_books</i> Proyectos</a></li>
 		<li class="active"><i class="material-icons">library_books</i> Objetivos</li>
 	</ol>
 </nav>
@@ -16,6 +16,7 @@
 			<div class="row d-flex justify-content-between">
 				<div class="col-lg-10">
 					<h4 class="text-center"><?php echo h($proyecto['Proyecto']['nombre']); ?></h4>
+					
 				</div>
 				<div class="col-lg-2 ">
 					<button type="button" class="btn btn-dark m-l--30 ">
@@ -34,7 +35,10 @@
 			</div>
 
 			<div class="row">
-				<div class="col"></div>
+				<div class="col">
+				
+
+				</div>
 			</div>
 		</div>
 		<div class="panel">
@@ -81,7 +85,7 @@
 											<?php endif; ?>
 
 											<?php if ($rol == 1) : ?>
-												<a class=" bg-deep-white waves-effect" onclick="javascript:return confirm('Estas seguro de desactivar el # %s?');" href="<?php echo APP_WWW . 'objetivos/delete/' . $objetivo['id'] ?>"><i class="material-icons">delete</i></a>
+												<a class=" bg-deep-white waves-effect" onclick="javascript:return confirm('¿Estas seguro de desactivar el objetivo?');" href="<?php echo APP_WWW . 'objetivos/delete/' . $objetivo['id'] ?>"><i class="material-icons">delete</i></a>
 
 											<?php endif; ?>
 										</td>

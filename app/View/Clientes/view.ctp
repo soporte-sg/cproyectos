@@ -82,9 +82,11 @@
 											<?php endif; ?>
 
 											<?php if ($rol == 1) : ?>
-												<a class=" bg-deep-white waves-effect" onclick="javascript:return confirm('Estas seguro de desactivar el # %s?');" href="<?php echo APP_WWW . 'proyectos/delete/' . $proyecto['id'] ?>"><i class="material-icons">delete</i></a>
+												<a class=" bg-deep-white waves-effect" onclick="javascript:return confirm('Estas seguro de desactivar el # %s?', $proyecto['id']);" href="<?php echo APP_WWW . 'proyectos/delete/' . $proyecto['id'] ?>"><i class="material-icons">delete</i></a>
 
 											<?php endif; ?>
+
+											<?php  if($rol==1 or $rol==2){ echo $this->Form->postLink(__('Quitar'), array('controller' => 'proyectos', 'action' => 'delete', $proyecto['id']), array(), __('Are you sure you want to delete # %s?', $proyecto['id']));} ?>
 										</td>
 									</tr>
 

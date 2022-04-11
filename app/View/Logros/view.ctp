@@ -1,3 +1,8 @@
+
+
+
+
+
 <div class="logros view">
 <h2><?php echo __('Logro'); ?></h2>
 	<dl>

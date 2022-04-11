@@ -26,9 +26,9 @@
 		<td><?php echo h($logro['Logro']['created']); ?>&nbsp;</td>
 		<td><?php echo h($logro['Logro']['modified']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $logro['Logro']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $logro['Logro']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $logro['Logro']['id']), array(), __('Are you sure you want to delete # %s?', $logro['Logro']['id'])); ?>
+			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $logro['Logro']['id'])); ?>
+			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $logro['Logro']['id'])); ?>
+			<?php echo $this->Form->postLink(__('Eliminar'), array('action' => 'delete', $logro['Logro']['id']), array(), __('Are you sure you want to delete # %s?', $logro['Logro']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -37,7 +37,7 @@
 	<p>
 	<?php
 	echo $this->Paginator->counter(array(
-	'format' => __('Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}')
+	'format' => __('Pagina {:page} de {:pages}, mostrando {:current} registros de {:count} en total, empezando en el registro {:start}, y terminando en {:end}')
 	));
 	?>	</p>
 	<div class="paging">
@@ -51,8 +51,8 @@
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('New Logro'), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Tareas'), array('controller' => 'tareas', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Tarea'), array('controller' => 'tareas', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nuevo Logro'), array('action' => 'add')); ?></li>
+		<li><?php echo $this->Html->link(__('Lista de Tareas'), array('controller' => 'tareas', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nueva Tarea'), array('controller' => 'tareas', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

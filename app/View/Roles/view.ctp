@@ -10,11 +10,11 @@
 	</dl>
 </div>
 <div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
+	<h3><?php echo __('Acciones'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('Edit Tipo Usuario'), array('action' => 'edit', $roles['Role']['id'])); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Delete Tipo Usuario'), array('action' => 'delete', $roles['Role']['id']), array(), __('Are you sure you want to delete # %s?', $roles['Role']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Tipo Usuarios'), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Tipo Usuario'), array('action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Editar Tipo de Usuario'), array('action' => 'edit', $roles['Role']['id'])); ?> </li>
+		<li><?php echo $this->Form->postLink(__('Eliminar Tipo de Usuario'), array('action' => 'delete', $roles['Role']['id']), array(), __('Are you sure you want to delete # %s?', $roles['Role']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('Listado Tipo de Usuarios'), array('action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nuevo Tipo de Usuario'), array('action' => 'add')); ?> </li>
 	</ul>
 </div>

@@ -122,7 +122,7 @@ class UsuariosController extends AppController {
             if (!empty($user) and $user['Usuario']['estado']=='Activo' ) {
                 //Si existe se redirecciona al usuario a la aplicación creando una variable de sesión 
                 $this->Session->write('Usuario', $user);
-                $this->Redirect(array('controller'=>'clientes','action'=>'index'));
+                $this->Redirect(array('controller'=>'home','action'=>'index'));
                // exit();
             } else {
                 //Si los datos no son correctos se comunica al usuario y se le devuelve al mismo

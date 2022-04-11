@@ -99,7 +99,7 @@ public function informe($id_proyecto){
  *
  * @return void
  */
-	public function add() {
+	public function add($cliente_id) {
 		if ($this->request->is('post')) {
 			$this->Proyecto->create();
 			if ($this->Proyecto->save($this->request->data)) {
@@ -109,7 +109,7 @@ public function informe($id_proyecto){
 				$this->Session->setFlash(__('El proyecto no pudo ser guardado.'));
 			}
 		}
-		$clientes = $this->Proyecto->Cliente->find('list');
+		$clientes = $this->Proyecto->Cliente->find('list', array('conditions'=>array('Cliente.id'=>$cliente_id)));
 		$this->set(compact('clientes'));
 	}
 

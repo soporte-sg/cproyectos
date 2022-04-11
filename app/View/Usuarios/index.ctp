@@ -1,5 +1,7 @@
 <div class="users index">
-    <h2><?php echo __('Usuarios'); ?></h2>
+    
+        <h2><?php echo __('Usuarios'); ?></h2>
+    
     <table cellpadding="0" cellspacing="0">
     <thead>
     <tr>

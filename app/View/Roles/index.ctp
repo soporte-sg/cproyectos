@@ -16,7 +16,7 @@
 		<td class="actions">
 			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $role['Role']['id'])); ?>
 			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $role['Role']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Quitar'), array('action' => 'delete', $role['Role']['id']), array(), __('Are you sure you want to delete # %s?', $role['Role']['id'])); ?>
+			<!-- <?php echo $this->Form->postLink(__('Quitar'), array('action' => 'delete', $role['Role']['id']), array(), __('Estas seguro de eliminar # %s?', $role['Role']['id'])); ?> -->
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -25,7 +25,7 @@
 	<p>
 	<?php
 	echo $this->Paginator->counter(array(
-	'format' => __('Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}')
+	'format' => __('Pag {:page} of {:pages}, Mostrando {:current} registros del {:count} total, Empezando en  {:start}, terminando en {:end}')
 	));
 	?>	</p>
 	<div class="paging">

@@ -1,27 +1,60 @@
-<div class="proyectos form">
-<?php echo $this->Form->create('Proyecto'); ?>
-	<fieldset>
-		<legend><?php echo __('Crear Proyecto'); ?></legend>
-	<?php
-		echo $this->Form->input('cliente_id');
-		echo $this->Form->input('nombre');
-		echo $this->Form->input('objetivo', array('label'=>'Objetivo General', 'type' => 'textarea'));
-		echo $this->Form->input('detalles', array('type' => 'textarea'));
-		echo $this->Form->input('inicio', array('type' => 'date'));
-		echo $this->Form->input('terminacion', array('type' => 'date'));
-		
-	?>
-	</fieldset>
-<?php echo $this->Form->end(__('Guardar')); ?>
-</div>
-<div class="actions">
-	<h3><?php echo __('Acciones'); ?></h3>
-	<ul>
 
-		<li><?php echo $this->Html->link(__('Listar Proyectos'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('Listar Clientes'), array('controller' => 'clientes', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('Nuevo Cliente'), array('controller' => 'clientes', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('Listar Objetivos'), array('controller' => 'objetivos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('Nuevo Objetivo'), array('controller' => 'objetivos', 'action' => 'add')); ?> </li>
-	</ul>
+<div class="row clearfix">
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		<div class="card">
+			<div class="header">
+				<h2>
+					CREAR PROYECTO
+				</h2>
+			</div>
+			<div class="body">
+				<div class="clientes form">
+					<?php echo $this->Form->create('Proyecto'); ?>
+					<fieldset>
+
+						<div class="form-group">
+							<div class="form-line">
+								<?php echo $this->Form->input('cliente_id', array('class' => 'form-control', 'label' => 'Cliente Id')); ?>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="form-line">
+								<?php echo $this->Form->input('nombre', array('class' => 'form-control', 'label' => 'Nombre', 'required', 'placeholder' => 'Ingresa el nit del cliente')); ?>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="form-line">
+								<?php echo $this->Form->input('objetivo', array('class' => 'form-control', 'label' => 'Objetivo General', 'required', 'type' => 'textarea')); ?>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="form-line">
+								<?php echo $this->Form->input('detalles', array('class' => 'form-control',  'required', 'type' => 'textarea')); ?>
+							</div>
+						</div>
+						
+
+						<div class="form-line">
+							<?php //echo $this->Form->input('inicio', array('class' => 'form-control', 'label' => 'fecha de inicio', 'required', 'type' => 'date', 'wtx-context' => '33CC7803-7D11-4C76-BB02-8B6F0083EE4F')); 
+							?>
+							<label for="">fecha de inicio</label>
+							<input type="date" name="data[Proyecto][inicio]" class="form-control">
+
+						</div>
+						<div class="form-line">
+							<label for="">fecha de terminacion</label>
+							<input type="date" name="data[Proyecto][terminacion]" class="form-control">
+						</div>
+						<br>
+
+					</fieldset>
+					<?php echo $this->Form->end(array('label' => 'Agregar', 'class' => 'btn btn-primary m-t-15 waves-effect')); ?>
+
+				</div>
+
+
+			</div>
+		</div>
+	</div>
 </div>

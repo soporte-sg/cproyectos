@@ -24,6 +24,7 @@ class ClientesController extends AppController {
  */
 	public function index() {
 		$user = $this->Session->read('Usuario');
+		// $this->layout="prueba";
 		//debug($user);
 		$rol=$user['Usuario']['role_id'];
         $this->Cliente->recursive = 0;
@@ -36,6 +37,16 @@ class ClientesController extends AppController {
 	//	debug ($cliente);
 		//$eps = $this->Eps->find('all',array('conditions'=>array('Eps.tipo_administradora'=>'EPS')));
 	}
+	public function index2() {
+		$user = $this->Session->read('Usuario');
+		// $this->layout="prueba";
+		//debug($user);
+		$rol=$user['Usuario']['role_id'];
+        $this->Cliente->recursive = 0;
+		$this->set('clientes', $this->Paginator->paginate());
+		$this->set(compact('rol'));
+	}
+	
 
 /**
  * view method

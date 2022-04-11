@@ -168,7 +168,7 @@ if (!defined('FULL_BASE_URL')) {
 	unset($httpHost, $s);
 }
 if (!defined('APP_WWW')) {
-	define('APP_WWW', str_replace("\\", "/", FULL_BASE_URL.DS."api.calidad".DS));
+	define('APP_WWW', str_replace("\\", "/", FULL_BASE_URL.DS."cproyectos".DS));
 }
 Configure::write('App.imageBaseUrl', IMAGES_URL);
 Configure::write('App.cssBaseUrl', CSS_URL);

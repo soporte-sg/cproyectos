@@ -58,6 +58,7 @@
 					<?php foreach ($clientes as $cliente) : ?>
 						<?php if ($cliente['Cliente']['estado'] == 1) : ?>
 							<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+								<!-- ss -->
 
 
 
